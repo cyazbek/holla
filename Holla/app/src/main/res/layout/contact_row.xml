@@ -6,22 +6,45 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <TextView android:layout_width="332dp"
-        android:layout_height="wrap_content"
-        android:text="Header"
-        android:id="@+id/header" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:id="@+id/imageView" />
-
-    <TextView
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/text"
-        android:layout_weight="0.04" />
+        android:layout_height="99dp"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="79dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@mipmap/ic_launcher"
+                android:id="@+id/imageView"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="75"
+            android:weightSum="1">
+
+            <TextView android:layout_width="305dp"
+                android:layout_height="wrap_content"
+                android:text="Header"
+                android:id="@+id/header"
+                android:layout_weight="0.45" />
+
+            <TextView
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/text"
+                android:layout_weight="0.33" />
+        </LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

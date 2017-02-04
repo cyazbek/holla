@@ -18,4 +18,22 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:text="Fav Activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/favButton"
+        android:layout_below="@+id/contactButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Map Me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/favButton"
+        android:layout_alignEnd="@+id/contactButton"
+        android:layout_marginTop="36dp"
+        android:id="@+id/mapButton" />
+
 </RelativeLayout>
