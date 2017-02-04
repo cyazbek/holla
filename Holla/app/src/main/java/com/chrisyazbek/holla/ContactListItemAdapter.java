@@ -60,8 +60,10 @@ public class ContactListItemAdapter extends BaseAdapter {
         View vi = convertView;
         if (vi == null)
             vi = inflater.inflate(R.layout.contact_row, null);
+        TextView header = (TextView) vi.findViewById(R.id.header);
+        header.setText(contacts.get(position).getName());
         TextView text = (TextView) vi.findViewById(R.id.text);
-        text.setText(contacts.get(position).getName());
+        text.setText(contacts.get(position).getNumber());
         return vi;
     }
 }
