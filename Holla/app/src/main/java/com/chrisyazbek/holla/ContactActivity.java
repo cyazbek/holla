@@ -39,15 +39,6 @@ public class ContactActivity extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.contact_list_view);
         listview.setAdapter(new ContactListItemAdapter(this, contact_List));
 
-        KKList = new ArrayList<Kontacts>();
-        movies = new ArrayList<String>();
-
-        // Create The Adapter with passing ArrayList as 3rd parameter
-//        ArrayAdapter<String> arrayAdapter =
-//                new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, movies);
-        // Set The Adapter
-//        moviesList.setAdapter(arrayAdapter);
-
         // register onClickListener to handle click events on each item
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {

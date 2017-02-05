@@ -31,7 +31,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:weightSum="100">
+                android:weightSum="100"
+                android:id="@+id/joker">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -39,7 +40,7 @@
                     app:srcCompat="@mipmap/ic_joker"
                     android:id="@+id/joker_view"
                     android:layout_weight="85"
-                    android:clickable="true" />
+                    android:clickable="false" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -66,14 +67,14 @@
                     app:srcCompat="@mipmap/ic_jokeygirl"
                     android:id="@+id/imageView3"
                     android:layout_weight="85"
-                    android:clickable="true" />
+                    android:clickable="false" />
 
                 <TextView
                     android:text="Croesus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView6"
-                    android:layout_weight="85"
+                    android:layout_weight="15"
                     android:textAlignment="center"
                     android:textSize="24sp" />
             </LinearLayout>
@@ -83,14 +84,16 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="33.3">
+            android:layout_weight="33.3"
+            android:weightSum="100">
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:weightSum="100">
+                android:weightSum="100"
+                android:id="@+id/greenlantern">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -98,24 +101,25 @@
                     app:srcCompat="@mipmap/ic_greenlantern"
                     android:id="@+id/imageView4"
                     android:layout_weight="85"
-                    android:clickable="true" />
+                    android:clickable="false" />
 
                 <TextView
                     android:text="Mirego"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView7"
-                    android:layout_weight="85"
+                    android:layout_weight="15"
                     android:textAlignment="center"
                     android:textSize="24sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:weightSum="100"
-                android:layout_weight="50">
+                android:layout_weight="50"
+                android:id="@+id/flash">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -123,14 +127,14 @@
                     app:srcCompat="@mipmap/ic_flash"
                     android:id="@+id/imageView5"
                     android:layout_weight="85"
-                    android:clickable="true" />
+                    android:clickable="false" />
 
                 <TextView
                     android:text="Genetec"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView8"
-                    android:layout_weight="85"
+                    android:layout_weight="15"
                     android:textAlignment="center"
                     android:textSize="24sp" />
             </LinearLayout>
@@ -140,14 +144,16 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="33.3">
+            android:layout_weight="33.3"
+            android:weightSum="100">
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:weightSum="100">
+                android:weightSum="100"
+                android:id="@+id/superman">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -155,24 +161,25 @@
                     app:srcCompat="@mipmap/ic_superman"
                     android:id="@+id/imageView6"
                     android:layout_weight="85"
-                    android:clickable="true" />
+                    android:clickable="false" />
 
                 <TextView
                     android:text="IBM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView10"
-                    android:layout_weight="85"
+                    android:layout_weight="15"
                     android:textAlignment="center"
                     android:textSize="24sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:weightSum="100"
-                android:layout_weight="50">
+                android:layout_weight="50"
+                android:id="@+id/more">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -180,14 +187,14 @@
                     app:srcCompat="@mipmap/ic_moredot"
                     android:id="@+id/imageView7"
                     android:layout_weight="85"
-                    android:clickable="true" />
+                    android:clickable="false" />
 
                 <TextView
                     android:text="More"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView11"
-                    android:layout_weight="85"
+                    android:layout_weight="15"
                     android:textAlignment="center"
                     android:textSize="24sp" />
             </LinearLayout>
