@@ -34,9 +34,7 @@ public class HollaAtActivity extends AppCompatActivity {
             {
                 String selectedContact = ((ContactLocation)contactLoc.get(position)).Location;
 
-                //Intent intent = new Intent(ContactActivity.this, Location2Activity.class);
-                //intent.putExtra("contact",selectedContact);
-                //startActivity(intent);
+
             }
         });
     }

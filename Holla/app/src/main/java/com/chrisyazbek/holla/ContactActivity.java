@@ -92,9 +92,6 @@ public class ContactActivity extends AppCompatActivity {
                     pCur.close();
                 }
             }
-//            for(int i = 0 ; i < KKList.size(); i++){
-//                movies.add(KKList.get(i).getName());
-//            }
         }
     }
 }
