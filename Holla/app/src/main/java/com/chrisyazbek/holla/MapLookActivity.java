@@ -29,7 +29,7 @@ public class MapLookActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),str, Toast.LENGTH_SHORT).show();
 
-                String loc = ((EditText)findViewById(R.id.editLocation)).toString();
+                String loc = ((EditText)findViewById(R.id.editLocation)).getText().toString();
 
                 Intent intent = new Intent(MapLookActivity.this, DoneActivity.class);
                 Notifyer.getInstance().AddNotifier(str,loc);

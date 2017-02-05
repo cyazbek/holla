@@ -14,6 +14,8 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,8 +23,8 @@ import java.util.ArrayList;
 
 public class ContactActivity extends AppCompatActivity {
     ArrayList<Kontacts> contact_List;
-    ArrayList<Kontacts> KKList;
-    ArrayList<String> movies;
+    Button bb;
+    String nb;
     ListView listview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +56,19 @@ public class ContactActivity extends AppCompatActivity {
             }
         });
 
+        nb = ((EditText) findViewById(R.id.phonenb_text)).getText().toString();
+        bb = (Button) findViewById(R.id.next);
+        bb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-    }
+                Intent intent = new Intent(ContactActivity.this, Location2Activity.class);
+                intent.putExtra("contact",nb);
+                startActivity(intent);
+            }
+        });
 
-    public void sendSMS (String phoneNb, String msgText) {
-        SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage(phoneNb, "5145693080", msgText, null, null);
+
     }
 
     public void getContacts()
