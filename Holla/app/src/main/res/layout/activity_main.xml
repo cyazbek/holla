@@ -13,38 +13,15 @@
     tools:context="com.chrisyazbek.holla.MainActivity"
     android:background="@drawable/holla_main">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1">
-
-    </LinearLayout>
-
-    <Button
-        android:text="Contact"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/contactButton"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Fav Activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:id="@+id/favButton"
-        android:layout_below="@+id/contactButton"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Map Me"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/favButton"
-        android:layout_alignEnd="@+id/contactButton"
-        android:layout_marginTop="36dp"
-        android:id="@+id/mapButton" />
+        app:srcCompat="@drawable/main_button"
+        android:id="@+id/startButtonView"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:layout_marginTop="165dp"
+        android:clickable="true" />
 
 </RelativeLayout>
