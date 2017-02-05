@@ -2,6 +2,7 @@ package com.chrisyazbek.holla;
 
 import android.Manifest;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.provider.ContactsContract;
@@ -45,8 +46,11 @@ public class ContactActivity extends AppCompatActivity {
             // argument position gives the index of item which is clicked
             public void onItemClick(AdapterView<?> arg0, View v, int position, long arg3)
             {
-                String selectedContact = ((Kontacts)contact_List.get(position)).getName();
-                Toast.makeText(getApplicationContext(), "Contact Selected : "+selectedContact,   Toast.LENGTH_LONG).show();
+                String selectedContact = ((Kontacts)contact_List.get(position)).getNumber();
+
+                Intent intent = new Intent(ContactActivity.this, Location2Activity.class);
+                intent.putExtra("contact","5145693080");
+                startActivity(intent);
             }
         });
 

@@ -5,6 +5,6 @@ package com.chrisyazbek.holla;
  */
 
 public class ContactLocation {
-    public String Contact;
+    public String Phone;
     public String Location;
 }
