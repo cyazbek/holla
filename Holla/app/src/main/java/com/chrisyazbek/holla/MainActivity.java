@@ -20,26 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*contactButton = (Button) findViewById(R.id.contactButton);
-        contactButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ContactActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mapButton = (Button) findViewById(R.id.mapButton);
-        mapButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        */
-
         ImageView start = (ImageView) findViewById(R.id.startButtonView);
         start.setOnClickListener(new View.OnClickListener() {
             @Override

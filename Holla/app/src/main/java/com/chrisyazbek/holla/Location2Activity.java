@@ -21,7 +21,6 @@ public class Location2Activity extends AppCompatActivity {
         homeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Location2Activity.this, DoneActivity.class);
                 Notifyer.getInstance().AddNotifier(number,"Home");
@@ -33,7 +32,6 @@ public class Location2Activity extends AppCompatActivity {
         officeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Location2Activity.this, DoneActivity.class);
                 Notifyer.getInstance().AddNotifier(number,"Office");
@@ -45,7 +43,6 @@ public class Location2Activity extends AppCompatActivity {
         bankLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Location2Activity.this, DoneActivity.class);
                 Notifyer.getInstance().AddNotifier(number,"Bank");
@@ -57,7 +54,6 @@ public class Location2Activity extends AppCompatActivity {
         churchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Location2Activity.this, DoneActivity.class);
                 Notifyer.getInstance().AddNotifier(number,"Church");
@@ -69,7 +65,6 @@ public class Location2Activity extends AppCompatActivity {
         hospitalLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Location2Activity.this, DoneActivity.class);
                 Notifyer.getInstance().AddNotifier(number,"Hospital");
@@ -81,7 +76,6 @@ public class Location2Activity extends AppCompatActivity {
         moreLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Location2Activity.this, MapLookActivity.class);
                 intent.putExtra("contact", number);

@@ -23,7 +23,6 @@ public class FavActivity extends AppCompatActivity {
         jokerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"haha", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(FavActivity.this, Location2Activity.class);
                 intent.putExtra("contact","5149628121");
                 startActivity(intent);
