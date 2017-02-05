@@ -49,7 +49,7 @@ public class ContactActivity extends AppCompatActivity {
                 String selectedContact = ((Kontacts)contact_List.get(position)).getNumber();
 
                 Intent intent = new Intent(ContactActivity.this, Location2Activity.class);
-                intent.putExtra("contact","5145693080");
+                intent.putExtra("contact",selectedContact);
                 startActivity(intent);
             }
         });

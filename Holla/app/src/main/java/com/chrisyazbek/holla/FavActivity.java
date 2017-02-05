@@ -74,8 +74,9 @@ public class FavActivity extends AppCompatActivity {
         moreLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
+                Intent intent = new Intent(FavActivity.this, ContactActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

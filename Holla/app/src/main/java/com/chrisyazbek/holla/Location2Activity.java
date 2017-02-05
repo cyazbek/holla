@@ -82,7 +82,7 @@ public class Location2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
-                
+
                 Intent intent = new Intent(Location2Activity.this, DoneActivity.class);
                 startActivity(intent);
             }
