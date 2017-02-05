@@ -1,5 +1,6 @@
 package com.chrisyazbek.holla;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,59 +20,59 @@ public class FavActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fav);
 
         LinearLayout jokerLayout = (LinearLayout) findViewById(R.id.joker);
-        jokerLayout.setOnTouchListener(new View.OnTouchListener() {
+        jokerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View arg0, MotionEvent arg1) {
-                    Toast.makeText(getApplicationContext(), "JOKER",   Toast.LENGTH_SHORT).show();
-                return true;
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"haha", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
+                startActivity(intent);
             }
         });
 
         LinearLayout gjokerLayout = (LinearLayout) findViewById(R.id.gjoker);
-        gjokerLayout.setOnTouchListener(new View.OnTouchListener() {
+        gjokerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View arg0, MotionEvent arg1) {
-                Toast.makeText(getApplicationContext(), "GIRLJOKER",   Toast.LENGTH_SHORT).show();
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
+                startActivity(intent);
             }
         });
 
         LinearLayout greenlanternLayout = (LinearLayout) findViewById(R.id.greenlantern);
-        greenlanternLayout.setOnTouchListener(new View.OnTouchListener() {
+        greenlanternLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View arg0, MotionEvent arg1) {
-                Toast.makeText(getApplicationContext(), "GREEN LANTERN",   Toast.LENGTH_SHORT).show();
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
+                startActivity(intent);
             }
         });
 
         LinearLayout flashLayout = (LinearLayout) findViewById(R.id.flash);
-        flashLayout.setOnTouchListener(new View.OnTouchListener() {
+        flashLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View arg0, MotionEvent arg1) {
-                Toast.makeText(getApplicationContext(), "FLASH",   Toast.LENGTH_SHORT).show();
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
+                startActivity(intent);
             }
         });
 
         LinearLayout supermanLayout = (LinearLayout) findViewById(R.id.superman);
-        supermanLayout.setOnTouchListener(new View.OnTouchListener() {
+        supermanLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View arg0, MotionEvent arg1) {
-                Toast.makeText(getApplicationContext(), "SUPERMAN",   Toast.LENGTH_SHORT).show();
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
+                startActivity(intent);
             }
         });
 
         LinearLayout moreLayout = (LinearLayout) findViewById(R.id.more);
-        moreLayout.setOnTouchListener(new View.OnTouchListener() {
+        moreLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View arg0, MotionEvent arg1) {
-                    Toast.makeText(getApplicationContext(), "MORE",   Toast.LENGTH_SHORT).show();
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
+                startActivity(intent);
             }
         });
-
     }
 
 }
