@@ -11,7 +11,7 @@ package com.chrisyazbek.holla;
 public class Notifyer { //@chris You said Kontacts.....
     private static Notifyer ourInstance = new Notifyer();
 
-    public List<ContactLocation> toContactAtLocation;
+    public ArrayList<ContactLocation> toContactAtLocation;
 
     public static Notifyer getInstance() {
         return ourInstance;
@@ -40,6 +40,10 @@ public class Notifyer { //@chris You said Kontacts.....
         }
         if (toDelete != null)
             toContactAtLocation.remove(toDelete);
+    }
+
+    public ArrayList<ContactLocation> getHollaz (){
+        return toContactAtLocation;
     }
 
     //TODO ADD LOCATION TO START SIGNALING contacts.

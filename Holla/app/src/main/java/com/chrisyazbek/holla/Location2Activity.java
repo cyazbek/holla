@@ -71,7 +71,7 @@ public class Location2Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(Location2Activity.this, DoneActivity.class);
+                Intent intent = new Intent(Location2Activity.this, HollaAtActivity.class);
                 Notifyer.getInstance().AddNotifier(number,"Hospital");
                 startActivity(intent);
             }
@@ -83,7 +83,8 @@ public class Location2Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),number, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(Location2Activity.this, DoneActivity.class);
+                Intent intent = new Intent(Location2Activity.this, MapLookActivity.class);
+                intent.putExtra("contact", number);
                 startActivity(intent);
             }
         });
