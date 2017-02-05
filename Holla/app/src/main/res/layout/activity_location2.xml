@@ -34,7 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:weightSum="100">
+                android:clickable="true"
+                android:id="@+id/homeLayout">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -69,7 +70,9 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="50">
+                android:layout_weight="50"
+                android:id="@+id/officeLayout"
+                android:clickable="true">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -111,7 +114,9 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="50">
+                android:layout_weight="50"
+                android:id="@+id/bankLayout"
+                android:clickable="true">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -144,7 +149,9 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="50">
+                android:layout_weight="50"
+                android:id="@+id/churchLayout"
+                android:clickable="true">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -185,7 +192,9 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="50">
+                android:layout_weight="50"
+                android:id="@+id/hospitalLayout"
+                android:clickable="true">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -218,7 +227,9 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="50">
+                android:layout_weight="50"
+                android:id="@+id/moremoreLayout"
+                android:clickable="true">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"

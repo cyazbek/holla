@@ -21,19 +21,19 @@ public class Notifyer { //@chris You said Kontacts.....
         toContactAtLocation = new ArrayList<ContactLocation>();
     }
 
-    public void AddNotifier(String name, String location)
+    public void AddNotifier(String phone, String location)
     {
         ContactLocation cl = new ContactLocation();
-        cl.Contact = name;
+        cl.Phone = phone;
         cl.Location = location;
         toContactAtLocation.add(cl);
     }
 
-    public void RemoveNotifier(String name, String location)
+    public void RemoveNotifier(String phone, String location)
     {
         ContactLocation toDelete = null;
         for (ContactLocation c : toContactAtLocation) {
-            if (c.Contact == name && c.Location == location) {
+            if (c.Phone == phone && c.Location == location) {
                 toDelete = c;
                 break;
             }

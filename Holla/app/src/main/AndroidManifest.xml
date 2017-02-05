@@ -38,12 +38,13 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB59cpsZu3Ld827SpVN2wm5XXSNyobDPHk"/>
+            android:value="AIzaSyB59cpsZu3Ld827SpVN2wm5XXSNyobDPHk" />
 
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Location2Activity"></activity>
+        <activity android:name=".Location2Activity" />
+        <activity android:name=".DoneActivity"></activity>
     </application>
 
 </manifest>
