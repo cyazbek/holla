@@ -13,17 +13,15 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="100">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="10">
+            android:layout_height="wrap_content">
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
@@ -35,23 +33,15 @@
                 android:text="Next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/next"
-                android:layout_weight="1" />
+                android:id="@+id/next"/>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="90">
-
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/contact_list_view" />
-        </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/contact_list_view" />
     </LinearLayout>
 
 </RelativeLayout>
