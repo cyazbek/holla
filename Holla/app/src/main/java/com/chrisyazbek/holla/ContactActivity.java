@@ -21,15 +21,20 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import butterknife.BindArray;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class ContactActivity extends AppCompatActivity {
     ArrayList<Kontacts> contact_List;
-    Button bb;
-    String nb;
-    ListView listview;
+    @BindView(R.id.contact_list_view) ListView listview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
+        ButterKnife.bind(this);
 
         // Get the reference of movies
         //ListView moviesList=(ListView)findViewById(R.id.contact_list_view);
@@ -39,7 +44,6 @@ public class ContactActivity extends AppCompatActivity {
         getContacts();
 
         Toast.makeText(getApplicationContext(), "Contact Selected : "+contact_List.size(),   Toast.LENGTH_LONG).show();
-        listview = (ListView) findViewById(R.id.contact_list_view);
         listview.setAdapter(new ContactListItemAdapter(this, contact_List));
 
         // register onClickListener to handle click events on each item
@@ -55,21 +59,18 @@ public class ContactActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        nb = ((EditText) findViewById(R.id.phonenb_text)).getText().toString();
-        bb = (Button) findViewById(R.id.next);
-        bb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(ContactActivity.this, Location2Activity.class);
-                intent.putExtra("contact",nb);
-                startActivity(intent);
-            }
-        });
-
-
     }
+
+    @OnClick(R.id.next)
+    public void CustomPhoneEntered()
+    {
+        Intent intent = new Intent(ContactActivity.this, Location2Activity.class);
+        String customNumber = ((EditText) findViewById(R.id.phonenb_text)).getText().toString();
+        Toast.makeText(getApplicationContext(), customNumber, Toast.LENGTH_SHORT).show();
+        intent.putExtra("contact",customNumber);
+        startActivity(intent);
+    }
+
 
     public void getContacts()
     {
@@ -77,29 +78,31 @@ public class ContactActivity extends AppCompatActivity {
         Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
                 null, null, null, null);
 
-        if (cur.getCount() > 0) {
-            while (cur.moveToNext()) {
-                String id = cur.getString(
-                        cur.getColumnIndex(ContactsContract.Contacts._ID));
-                String name = cur.getString(cur.getColumnIndex(
-                        ContactsContract.Contacts.DISPLAY_NAME));
+        if (cur.getCount() <= 0) {
+            return;
+        }
+
+        while (cur.moveToNext()) {
+            String id = cur.getString(
+                    cur.getColumnIndex(ContactsContract.Contacts._ID));
+            String name = cur.getString(cur.getColumnIndex(
+                    ContactsContract.Contacts.DISPLAY_NAME));
 
 
-                if (cur.getInt(cur.getColumnIndex(
-                        ContactsContract.Contacts.HAS_PHONE_NUMBER)) > 0) {
-                    Cursor pCur = cr.query(
-                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                            null,
-                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = ?",
-                            new String[]{id}, null);
-                    while (pCur.moveToNext()) {
-                        String phoneNo = pCur.getString(pCur.getColumnIndex(
-                                ContactsContract.CommonDataKinds.Phone.NUMBER));
-                        contact_List.add(new Kontacts(name, phoneNo));
-                        break;
-                    }
-                    pCur.close();
+            if (cur.getInt(cur.getColumnIndex(
+                    ContactsContract.Contacts.HAS_PHONE_NUMBER)) > 0) {
+                Cursor pCur = cr.query(
+                        ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                        null,
+                        ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = ?",
+                        new String[]{id}, null);
+                while (pCur.moveToNext()) {
+                    String phoneNo = pCur.getString(pCur.getColumnIndex(
+                            ContactsContract.CommonDataKinds.Phone.NUMBER));
+                    contact_List.add(new Kontacts(name, phoneNo));
+                    break;
                 }
+                pCur.close();
             }
         }
     }
