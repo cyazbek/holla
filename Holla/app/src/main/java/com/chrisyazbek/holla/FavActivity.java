@@ -12,62 +12,16 @@ import android.widget.Toast;
 
 import com.google.android.gms.plus.model.people.Person;
 
+import butterknife.OnClick;
+import butterknife.ButterKnife;
+
 public class FavActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fav);
-
-        LinearLayout jokerLayout = (LinearLayout) findViewById(R.id.joker);
-        jokerLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
-                intent.putExtra("contact","5149628121");
-                startActivity(intent);
-            }
-        });
-
-        LinearLayout gjokerLayout = (LinearLayout) findViewById(R.id.gjoker);
-        gjokerLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
-                intent.putExtra("contact","5149628121");
-                startActivity(intent);
-            }
-        });
-
-        LinearLayout greenlanternLayout = (LinearLayout) findViewById(R.id.greenlantern);
-        greenlanternLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
-                intent.putExtra("contact","5145693080");
-                startActivity(intent);
-            }
-        });
-
-        LinearLayout flashLayout = (LinearLayout) findViewById(R.id.flash);
-        flashLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
-                intent.putExtra("contact","5145693080");
-                startActivity(intent);
-            }
-        });
-
-        LinearLayout supermanLayout = (LinearLayout) findViewById(R.id.superman);
-        supermanLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FavActivity.this, Location2Activity.class);
-                intent.putExtra("contact","5145693080");
-                startActivity(intent);
-            }
-        });
+        ButterKnife.bind(this);
 
         LinearLayout moreLayout = (LinearLayout) findViewById(R.id.more);
         moreLayout.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +32,15 @@ public class FavActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @OnClick({R.id.joker, R.id.gjoker, R.id.greenlantern, R.id.flash, R.id.superman, R.id.TestMe})
+    public void jokerClick(View v)
+    {
+        Intent intent = new Intent(FavActivity.this, Location2Activity.class);
+        intent.putExtra("contact","5144421279");
+        startActivity(intent);
+        Toast.makeText(getApplicationContext(), "CLICKED", Toast.LENGTH_SHORT).show();
     }
 
 }
