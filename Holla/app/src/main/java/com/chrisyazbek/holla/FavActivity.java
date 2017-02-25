@@ -24,13 +24,12 @@ public class FavActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.joker, R.id.gjoker, R.id.greenlantern, R.id.flash, R.id.superman, R.id.TestMe})
+    @OnClick({R.id.joker, R.id.gjoker, R.id.greenlantern, R.id.flash, R.id.superman})
     public void contacClick()
     {
         Intent intent = new Intent(FavActivity.this, Location2Activity.class);
         intent.putExtra("contact","5144421279");
         startActivity(intent);
-        Toast.makeText(getApplicationContext(), "CLICKED", Toast.LENGTH_SHORT).show();
     }
 
     @OnClick(R.id.more)
