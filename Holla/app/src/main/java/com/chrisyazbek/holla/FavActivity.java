@@ -22,25 +22,23 @@ public class FavActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fav);
         ButterKnife.bind(this);
-
-        LinearLayout moreLayout = (LinearLayout) findViewById(R.id.more);
-        moreLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FavActivity.this, ContactActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 
     @OnClick({R.id.joker, R.id.gjoker, R.id.greenlantern, R.id.flash, R.id.superman, R.id.TestMe})
-    public void jokerClick(View v)
+    public void contacClick()
     {
         Intent intent = new Intent(FavActivity.this, Location2Activity.class);
         intent.putExtra("contact","5144421279");
         startActivity(intent);
         Toast.makeText(getApplicationContext(), "CLICKED", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.more)
+    public void moreClick()
+    {
+        Intent intent = new Intent(FavActivity.this, ContactActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }
