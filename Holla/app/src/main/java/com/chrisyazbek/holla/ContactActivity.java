@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindArray;
 import butterknife.BindView;
@@ -29,18 +31,35 @@ import butterknife.OnClick;
 public class ContactActivity extends AppCompatActivity {
     ArrayList<Kontacts> contact_List;
     @BindView(R.id.contact_list_view) ListView listview;
+    public static final int MULTIPLE_PERMISSIONS = 10; //Required for permissions
+
+    String[] permissions = new String[] {
+            Manifest.permission.READ_CONTACTS
+    };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
-        ButterKnife.bind(this);
+    protected void onStart() {
+        super.onStart();
+        if (checkPermissions())
+        {
+            //Granted
+            Toast.makeText(getApplicationContext(), "HAVE PERMISSIONS", Toast.LENGTH_SHORT).show();
+            RetrieveContacts();
 
-        // Get the reference of movies
-        //ListView moviesList=(ListView)findViewById(R.id.contact_list_view);
+        }
+        else
+        {
+            //Lack permissions
+            Toast.makeText(getApplicationContext(), "NO PERMISSIONS", Toast.LENGTH_SHORT).show();
+            Log.e("MISSING PERMISSION", "Contact permission wasn't granted in ContactActivity");
+            //TODO: Either Exit Application or Go back One Page
+        }
+    }
 
+    //Called only after permissions are given
+    private void RetrieveContacts()
+    {
         contact_List = new ArrayList<Kontacts>();
-
         getContacts();
 
         Toast.makeText(getApplicationContext(), "Contact Selected : "+contact_List.size(),   Toast.LENGTH_LONG).show();
@@ -59,6 +78,47 @@ public class ContactActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private boolean checkPermissions() {
+        int result;
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        for (String p:permissions) {
+            result = ContextCompat.checkSelfPermission(this,p);
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                listPermissionsNeeded.add(p);
+            }
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), MULTIPLE_PERMISSIONS);
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MULTIPLE_PERMISSIONS:{
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    // permissions granted.
+                    RetrieveContacts();
+                } else {
+                    // no permissions granted.
+                }
+                return;
+            }
+        }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_contact);
+        ButterKnife.bind(this);
+
+        // Get the reference of movies
+        //ListView moviesList=(ListView)findViewById(R.id.contact_list_view);
     }
 
     @OnClick(R.id.next)
