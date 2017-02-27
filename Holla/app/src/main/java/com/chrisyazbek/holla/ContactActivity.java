@@ -43,14 +43,12 @@ public class ContactActivity extends AppCompatActivity {
         if (checkPermissions())
         {
             //Granted
-            Toast.makeText(getApplicationContext(), "HAVE PERMISSIONS", Toast.LENGTH_SHORT).show();
             RetrieveContacts();
 
         }
         else
         {
             //Lack permissions
-            Toast.makeText(getApplicationContext(), "NO PERMISSIONS", Toast.LENGTH_SHORT).show();
             Log.e("MISSING PERMISSION", "Contact permission wasn't granted in ContactActivity");
             //TODO: Either Exit Application or Go back One Page
         }
@@ -62,7 +60,6 @@ public class ContactActivity extends AppCompatActivity {
         contact_List = new ArrayList<Kontacts>();
         getContacts();
 
-        Toast.makeText(getApplicationContext(), "Contact Selected : "+contact_List.size(),   Toast.LENGTH_LONG).show();
         listview.setAdapter(new ContactListItemAdapter(this, contact_List));
 
         // register onClickListener to handle click events on each item
@@ -126,7 +123,6 @@ public class ContactActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(ContactActivity.this, Location2Activity.class);
         String customNumber = ((EditText) findViewById(R.id.phonenb_text)).getText().toString();
-        Toast.makeText(getApplicationContext(), customNumber, Toast.LENGTH_SHORT).show();
         intent.putExtra("contact",customNumber);
         startActivity(intent);
     }
