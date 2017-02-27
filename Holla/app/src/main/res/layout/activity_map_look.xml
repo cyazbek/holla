@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_map_look"
     android:layout_width="match_parent"
@@ -8,18 +8,28 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.chrisyazbek.holla.MapLookActivity">
 
     <TextView
         android:text="Enter Location Address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editLocation"
         android:layout_marginTop="28dp"
         android:id="@+id/textView4"
         android:textAlignment="center"
         android:textSize="24sp" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:context="com.chrisyazbek.holla.MapsActivity" />
+
 
     <EditText
         android:layout_width="match_parent"
@@ -27,16 +37,13 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editLocation"
-        android:hint="2900 Blvd Edouard-Monpetit"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true" />
+        android:textAlignment="center"
+        android:hint="Search " />
 
     <Button
         android:text="Done"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="69dp"
-        android:id="@+id/doneB"
-        android:layout_alignParentStart="true" />
-</RelativeLayout>
+        android:id="@+id/doneB" />
+</LinearLayout>
