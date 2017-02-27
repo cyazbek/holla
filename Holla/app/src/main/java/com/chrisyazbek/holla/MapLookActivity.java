@@ -18,18 +18,21 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MapLookActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    Button doneB;
     String str;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_look);
+        ButterKnife.bind(this);
 
         Intent i = getIntent();
-        str = i.getStringExtra("contact");
+        str = i.getStringExtra("contact");  //TODO: Replace to Contact
 
         Log.e("MAP", "Creating...");
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -38,20 +41,18 @@ public class MapLookActivity extends FragmentActivity implements OnMapReadyCallb
         mapFragment.getMapAsync(this);
 
 
-        doneB = (Button) findViewById(R.id.doneB);
-        doneB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),str, Toast.LENGTH_SHORT).show();
+    }
 
-                String loc = ((EditText)findViewById(R.id.editLocation)).getText().toString();
+    @OnClick(R.id.doneB)
+    public void DoneSelecting()
+    {
+        Toast.makeText(getApplicationContext(),str, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(MapLookActivity.this, DoneActivity.class);
-                Notifyer.getInstance().AddNotifier(str,loc);
-                startActivity(intent);
-            }
-        });
+        String loc = ((EditText)findViewById(R.id.editLocation)).getText().toString();
 
+        Intent intent = new Intent(MapLookActivity.this, DoneActivity.class);
+        Notifyer.getInstance().AddNotifier(str,loc);
+        startActivity(intent);
     }
 
     /**
@@ -70,10 +71,11 @@ public class MapLookActivity extends FragmentActivity implements OnMapReadyCallb
         Toast.makeText(getApplicationContext(), "MAP READY", Toast.LENGTH_SHORT).show();
         Log.e("MAP", "Map Ready");
 
-        // Add a marker in Sydney and move the camera
+        // Add a marker at Polytechnic
         LatLng poly = new LatLng(45.504628, -73.614675);
         mMap.addMarker(new MarkerOptions().position(poly).title("Marker at Polytechnique"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(poly));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(mMap.getMaxZoomLevel()));
     }
 
 }
