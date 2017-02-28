@@ -5,4 +5,9 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Location permission required to find your current location.</string>
+    <string name="location_permission_denied">Will not be able to find your current location.</string>
+    <string name="permission_required_toast">Location permission is required to find your current Location.</string>
 </resources>
